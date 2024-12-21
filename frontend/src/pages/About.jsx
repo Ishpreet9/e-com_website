@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from '../components/Title'
 import SubscriptionBox from '../components/SubscriptionBox'
 import { assets } from '../assets/assets'
 
 const About = () => {
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(()=>{
+    setIsVisible(true);
+  },[])
+
   return (
-    <div className="p-6 font-sans">
+    <div className={`p-6 font-sans transition-opacity ease-in duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       {/* About Us Section */}
       <div className="mb-12">
         <div className="text-center text-2xl mb-6">
           <Title text1={'ABOUT'} text2={'US'}/>
         </div>
         <div className="max-w-3xl mx-auto text-center mb-10">
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <p className="text-gray-400 leading-relaxed text-lg">
             Welcome to our e-commerce website! We are dedicated to providing you with an exceptional online shopping
             experience. With a wide range of products, competitive prices, and a seamless shopping journey, we aim to be
             your one-stop solution for all your needs. Our commitment is to ensure you enjoy shopping with ease and
@@ -27,7 +34,7 @@ const About = () => {
           <Title text1={'OUR'} text2={'MISSION'}/>
         </div>
         <div className="max-w-3xl mx-auto text-center mb-10">
-          <p className="text-gray-700 leading-relaxed text-lg">
+          <p className="text-gray-400 leading-relaxed text-lg">
             Our mission is to revolutionize the way you shop online by combining quality, convenience, and customer
             satisfaction. We strive to create a platform that not only meets but exceeds your expectations, ensuring a
             seamless and enjoyable shopping experience every time.
@@ -45,7 +52,7 @@ const About = () => {
         {/* Box 1: Quality Assurance */}
         <div className="flex-1 max-w-xs border border-gray-300 rounded-lg p-6 text-center">
           <strong className="text-xl font-semibold block mb-2">Quality Assurance</strong>
-          <p className="text-gray-600 text-base">
+          <p className="text-gray-400 text-base">
             We ensure that all our products meet the highest standards of quality, offering you the best value for your
             money.
           </p>
@@ -54,7 +61,7 @@ const About = () => {
         {/* Box 2: Convenience */}
         <div className="flex-1 max-w-xs border border-gray-300 rounded-lg p-6 text-center">
           <strong className="text-xl font-semibold block mb-2">Convenience</strong>
-          <p className="text-gray-600 text-base">
+          <p className="text-gray-400 text-base">
             Shop anytime, anywhere with our user-friendly platform designed for effortless browsing and checkout.
           </p>
         </div>
@@ -62,7 +69,7 @@ const About = () => {
         {/* Box 3: Exceptional Customer Service */}
         <div className="flex-1 max-w-xs border border-gray-300 rounded-lg p-6 text-center">
           <strong className="text-xl font-semibold block mb-2">Exceptional Customer Service</strong>
-          <p className="text-gray-600 text-base">
+          <p className="text-gray-400 text-base">
             Our support team is always ready to assist you, ensuring a smooth and satisfying shopping experience.
           </p>
         </div>

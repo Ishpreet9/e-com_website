@@ -38,6 +38,7 @@ import bin_icon from  './bin_icon.png'
 import upi_logo from './upi_logo.png'
 import card_logo from './card_logo.png'
 import cod_logo from './cod_logo.png'
+import checked_icon from './checked_icon.png'
 
 export const assets = {
     //these variables store the path of the image
@@ -59,7 +60,8 @@ export const assets = {
     star_icon,
     half_star_icon,
     star_dull_icon,
-    bin_icon
+    bin_icon,
+    checked_icon
 }
 
 export const products = [

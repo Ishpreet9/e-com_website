@@ -7,7 +7,7 @@ const ShopContextProvider = (props) => {
 
     const currency = '$';
     const delivery_fee = 200;
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState(''); 
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({}); //cartItems will store count of all variants based on the item (item object (with all the variants and their count) inside cartItems object)
     // Like this :-

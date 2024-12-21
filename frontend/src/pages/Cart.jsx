@@ -45,15 +45,15 @@ function Cart() {
                 <div className='flex items-start gap-6 '>
                   <img className='w-16 sm:w-20' src={productData.image[0]} alt="" />
                   <div>
-                    <p className='text-lg sm:text-xl font-semibold'>{productData.name}</p>
+                    <p className='text-lg sm:text-xl font-semibold text-gray-200'>{productData.name}</p>
                     <div className='flex items-center gap-5 mt-2 text-lg'>
-                      <p>{currency}{productData.price}</p>
-                      <p className='px-2 sm:px-3 sm:py-1 border bg-slate-100'>{item.variant}</p>
+                      <p className='text-gray-200'>{currency}{productData.price}</p>
+                      <p className='px-2 sm:px-3 sm:py-1 border bg-black bg-opacity-25 text-gray-200'>{item.variant}</p>
                     </div>
                   </div>
                 </div>
-                <input onChange={(e)=>updateQuantity(item._id,item.variant,e.target.value)} className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1' type="number" min={1} defaultValue={item.quantity} />
-                <img onClick={()=>updateQuantity(item._id,item.variant,0)} className='w-[29px] mb-2 cursor-pointer' src={assets.bin_icon} alt="" />
+                <input onChange={(e)=>updateQuantity(item._id,item.variant,e.target.value)} className='border border-white bg-black bg-opacity-25 text-white max-w-10 sm:max-w-20 px-1 sm:px-2 py-1 active:border-yellow-400' type="number" min={1} defaultValue={item.quantity} />
+                <img onClick={()=>updateQuantity(item._id,item.variant,0)} className='w-[29px] mb-2 cursor-pointer filter invert brightness-0' src={assets.bin_icon} alt="" />
               </div>
             )
           })
@@ -65,7 +65,7 @@ function Cart() {
         </div>
         <div className='w-full text-center'>
           <NavLink to={'/place-order'}>
-            <button className='bg-gray-800 text-white font-medium text-base my-16 px-10 py-5 rounded-xl active:bg-black'>PROCEED TO CHECKOUT</button>
+            <button className='bg-black bg-opacity-25 border-2 border-white border-opacity-75 text-white font-medium text-lg my-16 px-6 py-5 active:border-yellow-400 active:bg-black active:bg-opacity-50'>PROCEED TO CHECKOUT</button>
           </NavLink>
         </div>
       </div>

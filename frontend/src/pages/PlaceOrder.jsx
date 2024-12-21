@@ -16,20 +16,20 @@ function PlaceOrder() {
           <Title text1={'DELIVERY'} text2={'INFORMATION'}/>
         </div>
         <div className='flex gap-3'>
-          <input className='border border-gray-400 bg-gray-100 rounded py-1.5 px-3.5 w-full ' type="text" placeholder='First Name'/>
-          <input className='border border-gray-400 bg-gray-100 rounded py-1.5 px-3.5 w-full ' type="text" placeholder='Last Name'/>
+          <input className='border border-gray-100 rounded py-1.5 px-3.5 w-full bg-black bg-opacity-25 text-white' type="text" placeholder='First Name'/>
+          <input className='border border-gray-100 rounded py-1.5 px-3.5 w-full bg-black bg-opacity-25 text-white' type="text" placeholder='Last Name'/>
         </div>
-        <input className='border border-gray-400 bg-gray-100 rounded py-1.5 px-3.5 w-full ' type="email" placeholder='E-mail Address'/>
-        <input className='border border-gray-400 bg-gray-100 rounded py-1.5 px-3.5 w-full ' type="text" placeholder='Delivery Address'/>
+        <input className='border border-gray-100 rounded py-1.5 px-3.5 w-full bg-black bg-opacity-25 text-white' type="email" placeholder='E-mail Address'/>
+        <input className='border border-gray-100 rounded py-1.5 px-3.5 w-full bg-black bg-opacity-25 text-white' type="text" placeholder='Delivery Address'/>
         <div className='flex gap-3'>
-          <input className='border border-gray-400 bg-gray-100 rounded py-1.5 px-3.5 w-full ' type="text" placeholder='State'/>
-          <input className='border border-gray-400 bg-gray-100 rounded py-1.5 px-3.5 w-full ' type="text" placeholder='Landmark'/>
+          <input className='border border-gray-100 rounded py-1.5 px-3.5 w-full bg-black bg-opacity-25 text-white' type="text" placeholder='State'/>
+          <input className='border border-gray-100 rounded py-1.5 px-3.5 w-full bg-black bg-opacity-25 text-white' type="text" placeholder='Landmark'/>
         </div>
         <div className='flex gap-3'>
-          <input className='border border-gray-400 bg-gray-100 rounded py-1.5 px-3.5 w-full ' type="number" placeholder='Pin-Code'/>
-          <input className='border border-gray-400 bg-gray-100 rounded py-1.5 px-3.5 w-full ' type="text" placeholder='Country'/>
+          <input className='border border-gray-100 rounded py-1.5 px-3.5 w-full bg-black bg-opacity-25 text-white' type="number" placeholder='Pin-Code'/>
+          <input className='border border-gray-100 rounded py-1.5 px-3.5 w-full bg-black bg-opacity-25 text-white' type="text" placeholder='Country'/>
         </div>
-        <input className='border border-gray-400 bg-gray-100 rounded py-1.5 px-3.5 w-full ' type="number" placeholder='Mobile Number'/>
+        <input className='border border-gray-100 rounded py-1.5 px-3.5 w-full bg-black bg-opacity-25 text-white' type="number" placeholder='Mobile Number'/>
         <div className='mt-8'>
           <CartTotal />
         </div>
@@ -42,23 +42,23 @@ function PlaceOrder() {
         {/* payment method selection */}
         <div className='flex gap-3 flex-col'>
           <div onClick={()=>setMethod('upi')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer h-20'>
-            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'upi' ? 'bg-blue-500' : ''}`}></p>
+            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'upi' ? 'bg-yellow-500' : ''}`}></p>
             <img className='w-24' src={assets.upi_logo} alt="" />
-            <p className='text-gray-500 font-bold opacity-80 pl-12 text-xl'>--- Pay With UPI ---</p>
+            <p className='text-gray-300 font-bold opacity-80 pl-12 text-xl'>--- Pay With UPI ---</p>
           </div>
           <div onClick={()=>setMethod('card')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer h-20'>
-            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'card' ? 'bg-blue-500' : ''}`}></p>
+            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'card' ? 'bg-yellow-500' : ''}`}></p>
             <img className='w-24' src={assets.card_logo} alt="" />
-            <p className='text-gray-500 font-bold opacity-80 pl-12 text-xl'>--- Pay With Card ---</p>
+            <p className='text-gray-300 font-bold opacity-80 pl-12 text-xl'>--- Pay With Card ---</p>
           </div>
           <div onClick={()=>setMethod('cod')} className='flex items-center gap-3 border p-2 px-3 cursor-pointer h-20'>
-            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'cod' ? 'bg-blue-500' : ''}`}></p>
-            <img className='w-24' src={assets.cod_logo} alt="" />
-            <p className='text-gray-500 font-bold opacity-80 pl-10 text-xl'>--- Cash On Delivery ---</p>
+            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'cod' ? 'bg-yellow-500' : ''}`}></p>
+            <img className='w-24 filter invert opacity-50' src={assets.cod_logo} alt="" />
+            <p className='text-gray-300 font-bold opacity-80 pl-10 text-xl'>--- Cash On Delivery ---</p>
           </div>
         </div>
         <NavLink to={'/orders'} className='w-full text-center mt-12'>
-          <button className='bg-gray-800 text-white font-medium text-base px-10 py-5 rounded-xl active:bg-black'>PLACE ORDER</button>
+          <button className='bg-black bg-opacity-25 text-white font-bold text-lg border-2 border-white px-10 py-5 active:bg-black active-bg-opacity-50 active:border-yellow-400'>PLACE ORDER</button>
         </NavLink>
       </div>
     </div>
