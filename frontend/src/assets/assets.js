@@ -97,19 +97,20 @@ export const products = [
         "bestSeller": true
     },
     {
-        "_id": "003",
-        "name": "Garmin Forerunner 955",
-        "description": "GPS smartwatch for athletes with advanced fitness and health tracking.",
-        "price": 499,
-        "image": [garmin_forerunner_955_image],
-        "category": "Smartwatches",
-        "subCategory": "Fitness",
+        "_id": "007",
+        "name": "Asus ROG Strix G15",
+        "description": "Powerful gaming laptop with Intel Core i7 and NVIDIA RTX 3060.",
+        "price": 1600,
+        "image": [asus_rog_strix_g15_image],
+        "category": "Laptops",
+        "subCategory": "Gaming",
         "variants": [
-            "Black",
-            "White"
+            "16GB RAM, 512GB SSD",
+            "16GB RAM, 1TB SSD",
+            "32GB RAM, 1TB SSD"
         ],
-        "date": 1707408000000, 
-        "bestSeller": false
+        "date": 1703120400000,
+        "bestSeller": true
     },
     {
         _id: "004",
@@ -158,22 +159,6 @@ export const products = [
         ],
         date: 1706644800000, // Example timestamp for a date in 2024
         bestSeller: true
-    },
-    {
-        "_id": "007",
-        "name": "Asus ROG Strix G15",
-        "description": "Powerful gaming laptop with Intel Core i7 and NVIDIA RTX 3060.",
-        "price": 1600,
-        "image": [asus_rog_strix_g15_image],
-        "category": "Laptops",
-        "subCategory": "Gaming",
-        "variants": [
-            "16GB RAM, 512GB SSD",
-            "16GB RAM, 1TB SSD",
-            "32GB RAM, 1TB SSD"
-        ],
-        "date": 1703120400000,
-        "bestSeller": true
     },
     {
         _id: "008",
@@ -393,5 +378,20 @@ export const products = [
         ],
         date: 1705603200000, // Example timestamp for a date in 2024
         bestSeller: true
+    },
+    {
+        "_id": "003",
+        "name": "Garmin Forerunner 955",
+        "description": "GPS smartwatch for athletes with advanced fitness and health tracking.",
+        "price": 499,
+        "image": [garmin_forerunner_955_image],
+        "category": "Smartwatches",
+        "subCategory": "Fitness",
+        "variants": [
+            "Black",
+            "White"
+        ],
+        "date": 1707408000000, 
+        "bestSeller": false
     }
 ]
