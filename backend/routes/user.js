@@ -1,6 +1,9 @@
 import express from 'express';
 import User from '../models/user.js';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import 'dotenv/config'
+import authMiddleware from '../middleware/auth.js';
 
 const router = express.Router();
 
@@ -41,7 +44,18 @@ router.post('/login', async (req,res) => {
             return res.status(400).json({message: 'Invalid username or password'});
         }
 
-        res.status(200).json({message: 'Login successful'});
+        //generate jwt token
+        const token = jwt.sign(
+            {
+                id: user._id //payload with user id
+            },
+            process.env.JWT_SECRET, //jwt secret from .env
+            {
+                expiresIn: '7d'
+            }
+        );
+
+        res.status(200).json({message: 'Login successful', token}); //login successful message along with token
     } catch (error) {
         res.status(500).json({message: 'Server error', error: error.message });
     }
