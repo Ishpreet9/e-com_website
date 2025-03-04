@@ -16,7 +16,7 @@ connectDB()
 // middlewares
 app.use(express.json())
 app.use(cors())
-app.use(imageRoutes);
+app.use('/static',imageRoutes);
 app.use('/', indexRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/product',productRouter);
