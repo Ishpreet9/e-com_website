@@ -58,4 +58,21 @@ const loginUser = async (req,res) => {
     }
 }
 
-export { loginUser,registerUser };
+const adminLogin = (req,res) => {
+    try {
+
+        const {username,password} = req.body; 
+        if(username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD){
+            const token = jwt.sign(username+password,process.env.JWT_SECRET);
+            res.json({success:true,token})   
+        }else
+        {
+            res.json({success:false,message:"Invalid credentials"})
+        }
+
+    } catch (error) {
+        
+    }
+}
+
+export { loginUser,registerUser,adminLogin };
