@@ -63,7 +63,7 @@ const adminLogin = (req,res) => {
 
         const {username,password} = req.body; 
         if(username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD){
-            const token = jwt.sign(username+password,process.env.JWT_SECRET);
+            const token = jwt.sign({username},process.env.JWT_SECRET,{expiresIn: '7d'});
             res.json({success:true,token})   
         }else
         {
@@ -71,7 +71,7 @@ const adminLogin = (req,res) => {
         }
 
     } catch (error) {
-        
+        res.json({success:false,message:error.message})
     }
 }
 
