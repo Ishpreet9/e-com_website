@@ -4,11 +4,18 @@ import Sidebar from '../components/Sidebar.jsx'
 import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
+  
   return (
     <div>
       <Navbar />
-      <Sidebar />
-      <Outlet />
+      <div className='flex flex-1 h-screen'>
+        <div className='w-1/5 border-r-2'>
+          <Sidebar />
+        </div>
+        <div className='w-4/5'>
+          <Outlet />
+        </div>
+      </div>
     </div>
   )
 }
