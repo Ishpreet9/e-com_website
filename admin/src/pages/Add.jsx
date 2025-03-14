@@ -42,7 +42,7 @@ const Add = () => {
           {[...Array(VariantsCount)].map((_,index)=>(
             <input key={index} type="text" className='px-3 py-2 bg-neutral-700 text-lg font-medium rounded-md outline-none placeholder-neutral-500' />
           ))}
-          <button onClick={()=>setVariantsCount(VariantsCount+1)} className='bg-black bg-opacity-60 p-3 rounded-lg'>Add Variants +</button>
+          <button type='button' onClick={()=>setVariantsCount(VariantsCount+1)} className='bg-black bg-opacity-60 p-3 rounded-lg'>Add Variants +</button>
         </div>
       </div>
       <div className='mt-6 inline-flex gap-3'>
