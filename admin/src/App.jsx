@@ -25,15 +25,15 @@ const App = () => {
       children: [
         {
           path: "/",
-          element: <Add />
+          element: <Add token={token} />
         },
         {
           path: "/list",
-          element: <List />
+          element: <List token={token} />
         },
         {
           path: "/orders",
-          element: <Orders />
+          element: <Orders token={token} />
         },
       ]
     }
