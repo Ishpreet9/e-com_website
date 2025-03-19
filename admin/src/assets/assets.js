@@ -4,6 +4,7 @@ import list from './list.png';
 import logo from './logo.png';
 import upload from './upload.png';
 import cross_icon from './cross_icon.png';
+import bin from './bin.png';
 
 export const assets = {
     add,
@@ -11,5 +12,6 @@ export const assets = {
     list,
     logo,
     upload,
-    cross_icon
+    cross_icon,
+    bin
 }

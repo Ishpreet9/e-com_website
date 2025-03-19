@@ -39,7 +39,7 @@ const addProduct = async (req,res) => {
 
 const removeProduct = async (req,res) => {
     try {
-        await Product.findByIdAndDelete(req.body.id);
+        await Product.findByIdAndDelete(req.body._id);
         res.json({success:true,message:"Product removed"});
     } catch (error) {
         res.json({success:true,message:error.message});
