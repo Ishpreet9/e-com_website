@@ -17,7 +17,7 @@ const Home = () => {
     <div className={`mt-10 transition-opacity ease-in duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <Prime />
       <LatestCollection />
-      <BestSeller />
+      {/* <BestSeller /> */}
       <OurPolicy />
       <SubscriptionBox />
     </div>

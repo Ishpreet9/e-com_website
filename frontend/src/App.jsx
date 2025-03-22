@@ -19,42 +19,42 @@ const App = () => {
       path: "/",
       element: <Layout/>,
       children: [
-        {
-          path: "/",
-          element: <Home />
-        },
-        {
-          path: "/about",
-          element: <About />
-        },
-        {
-          path: "/cart",
-          element: <Cart />
-        },
+        // {
+        //   path: "/",
+        //   element: <Home />
+        // },
+        // {
+        //   path: "/about",
+        //   element: <About />
+        // },
+        // {
+        //   path: "/cart",
+        //   element: <Cart />
+        // },
         {
           path: "/collection",
           element: <Collection />
-        },
-        {
-          path: "/contact",
-          element: <Contact />
-        },
-        {
-          path: "/login",
-          element: <Login />
-        },
-        {
-          path: "/orders",
-          element: <Orders />
-        },
-        {
-          path: "/place-order",
-          element: <PlaceOrder />
-        },
-        {
-          path: "/product/:productId",
-          element: <Product />
         }
+        // {
+        //   path: "/contact",
+        //   element: <Contact />
+        // },
+        // {
+        //   path: "/login",
+        //   element: <Login />
+        // },
+        // {
+        //   path: "/orders",
+        //   element: <Orders />
+        // },
+        // {
+        //   path: "/place-order",
+        //   element: <PlaceOrder />
+        // },
+        // {
+        //   path: "/product/:productId",
+        //   element: <Product />
+        // }
       ]
     }
   ]);
