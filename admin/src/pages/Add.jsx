@@ -74,7 +74,9 @@ const Add = ({token}) => {
       formData.append("price",price);
       formData.append("category",category);
       formData.append("subCategory",subCategory);
-      formData.append("variants",JSON.stringify(variants));
+      variants.forEach((variant,index) => {
+        formData.append(`variants[${index}]`,variant);
+      })
 
       image1 && formData.append("image1",image1);
       image2 && formData.append("image2",image2);
