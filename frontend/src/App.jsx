@@ -19,14 +19,14 @@ const App = () => {
       path: "/",
       element: <Layout/>,
       children: [
-        // {
-        //   path: "/",
-        //   element: <Home />
-        // },
-        // {
-        //   path: "/about",
-        //   element: <About />
-        // },
+        {
+          path: "/",
+          element: <Home />
+        },
+        {
+          path: "/about",
+          element: <About />
+        },
         // {
         //   path: "/cart",
         //   element: <Cart />
@@ -34,11 +34,11 @@ const App = () => {
         {
           path: "/collection",
           element: <Collection />
-        }
-        // {
-        //   path: "/contact",
-        //   element: <Contact />
-        // },
+        },
+        {
+          path: "/contact",
+          element: <Contact />
+        },
         // {
         //   path: "/login",
         //   element: <Login />
@@ -51,10 +51,10 @@ const App = () => {
         //   path: "/place-order",
         //   element: <PlaceOrder />
         // },
-        // {
-        //   path: "/product/:productId",
-        //   element: <Product />
-        // }
+        {
+          path: "/product/:productId",
+          element: <Product />
+        }
       ]
     }
   ]);

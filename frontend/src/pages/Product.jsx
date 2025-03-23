@@ -8,16 +8,16 @@ import RelatedProducts from '../components/RelatedProducts';
 function Product() {
 
   const {productId} = useParams();
-  const { products, currency, addToCart } = useContext(ShopContext);
+  const { products, backendUrl } = useContext(ShopContext);
   const [productData,setProductData] = useState(false);
   const [image,setImage] = useState('');
   const [selectedVariant,setSelectedVariant] = useState('');
 
   //this part might have potential issues related to async if it needs data fetching in future, note for future use
-  const fetchProductData = () => {
-    const item = products.find((item)=>item._id === productId);
+  const fetchProductData = async () => {
+    const item = await products.find((item)=>item._id === productId);
         setProductData(item);
-        setImage(item.image[0]);
+        setImage(item.images[0]);
   }
 
   useEffect(()=>{
@@ -40,13 +40,13 @@ function Product() {
         <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row'>
           <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
             {
-              productData.image.map((item,index)=>(
-                <img onClick={()=>setImage(item)} src={item} key={index} alt="" className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer'/>
+              productData.images.map((miniImage,index)=>(
+                <img onClick={()=>setImage(miniImage)} src={backendUrl+'/static/images/'+miniImage} key={index} alt="" className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer'/>
               ))
             }
           </div>
           <div className='w-full sm:w-[80%]'>
-            <img className='w-full h-auto' src={image} alt="" />
+            <img className='w-full h-auto' src={backendUrl+'/static/images/'+image} alt="" />
           </div>
         </div>
         {/* product information */}
@@ -60,7 +60,7 @@ function Product() {
             <img src={assets.star_dull_icon} alt="" className="w-3 5" />
             <p className='pl-2'>(122)</p>
           </div>
-          <p className='mt-5 text-3xl font-medium'>{currency}{productData.price}</p>
+          <p className='mt-5 text-3xl font-medium'>₹{productData.price}</p>
           <p className='mt-5 text-gray-300 md:w-4/5'>{productData.description}</p>
           <div className='flex flex-col gap-4 my-8'>
             <p>Select Variant</p>
