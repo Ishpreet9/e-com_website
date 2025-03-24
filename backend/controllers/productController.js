@@ -59,11 +59,25 @@ const singleProduct = async (req,res) => {
 }
 
 const listProducts = async (req,res) => {
+
+    const {search} = req.query;
     
     try {
 
-        const products = await Product.find({});
-        res.json({success:true,products});
+        if(search)
+        {
+            const products = await Product.find({
+                $text: {
+                    $search: search,
+                }
+            })
+            res.json({success:true,products});
+        }
+        else
+        {
+            const products = await Product.find({});
+            res.json({success:true,products});
+        }
         
     } catch (error) {
         console.log(error);

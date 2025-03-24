@@ -92,7 +92,7 @@ const ShopContextProvider = (props) => {
 
     const getProductsData = async () => {
         try {
-            const response = await axios.get(backendUrl + '/api/product/list');
+            const response = await axios.get(backendUrl + '/api/product/list',{params:{search}});
             // console.log(response.data.products);
             if (response.data.success) {
                 setProducts(response.data.products);
@@ -106,7 +106,7 @@ const ShopContextProvider = (props) => {
 
     useEffect(() => {
         getProductsData();
-    },[])
+    },[search])
 
     useEffect(()=>{
         console.log('Products data: ',products);
