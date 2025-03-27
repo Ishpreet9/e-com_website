@@ -5,6 +5,7 @@ import connectDB from './config/db.js';
 import indexRoutes from './routes/indexRoute.js';
 import userRoutes from './routes/userRoute.js';
 import productRouter from './routes/productRoute.js';
+import cartRouter from './routes/cartRoute.js';
 import imageRoutes from './routes/imageRoute.js'
 
 // app config 
@@ -20,6 +21,7 @@ app.use('/static',imageRoutes);
 app.use('/', indexRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/product',productRouter);
+app.use('/api/cart',cartRouter);
 
 // api endpoints
 
